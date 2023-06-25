@@ -28,7 +28,7 @@ export const HeaderNav = styled.nav`
     button{
         border: 0;
         border-radius: 6px;
-        padding: 0.5rem;
+        padding: 0.5rem 0.6rem;
         color: ${props => props.theme["yellow-300"]};
         background-color: ${props => props.theme["yellow-100"]};
         cursor: pointer;

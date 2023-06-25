@@ -8,7 +8,7 @@ export function Header(){
             <img src={imgLogo} alt="Logo" />
             <HeaderNav>
                 <p><MapPin size={22} weight="fill" /> Belém, PA</p>
-                <button><ShoppingCart size={22} weight="fill"/></button>
+                <button><ShoppingCart size={20} weight="fill"/></button>
             </HeaderNav>
         </HeaderContainer>
     )
