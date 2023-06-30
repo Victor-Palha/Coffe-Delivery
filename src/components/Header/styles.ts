@@ -25,7 +25,7 @@ export const HeaderNav = styled.nav`
         }
     }
 
-    button{
+    a{
         border: 0;
         border-radius: 6px;
         padding: 0.5rem 0.6rem;
