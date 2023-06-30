@@ -63,5 +63,20 @@ export const HomeImage = styled.div`
 `
 
 export const HomeCoffes = styled.main`
+    padding: 0px 10rem;
+    
+    h2{
+        font-size: 2rem;
+        font-family: "Baloo 2", cursive;
+        font-weight: 800;
+        line-height: 130%;
+        margin-bottom: 4.4rem;
+    }
+`
 
+export const CoffeContainer = styled.div`
+display: flex;
+flex-wrap: wrap;
+width: 100%;
+justify-content: space-evenly;
 `

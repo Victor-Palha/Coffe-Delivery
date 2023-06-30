@@ -1,9 +1,14 @@
-import { ContainerItens, HomeContainer, HomeImage, HomeTitles, Item } from "./style";
+import { CoffeContainer, ContainerItens, HomeCoffes, HomeContainer, HomeImage, HomeTitles, Item } from "./style";
 import coffeImg from '../../assets/CoffeImg.png'
 import { ShoppingCart, Timer, Package, Coffee } from "phosphor-react";
+import { CoffeItem } from "../../components/Coffes";
+import { useContext } from "react";
+import { CoffeContext} from "../../context/coffeContext";
 
 export function Home(){
+    const {coffesItens} = useContext(CoffeContext)
     return(
+        <>
         <HomeContainer>
             <HomeTitles>
                 <h1>Encontre o café perfeito <br /> para qualquer hora do dia</h1>
@@ -35,5 +40,14 @@ export function Home(){
                 <img src={coffeImg} alt="Café Coffe Delivery cercado por grãos de café" />
             </HomeImage>
         </HomeContainer>
+        <HomeCoffes>
+                <h2>Nossos cafés</h2>
+                <CoffeContainer>
+                    {coffesItens.map((coffe) => (
+                        <CoffeItem key={coffe.id} coffe={coffe}/>
+                    ))}
+                </CoffeContainer>
+        </HomeCoffes>
+        </>
     )
 }
