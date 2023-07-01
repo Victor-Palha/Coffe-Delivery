@@ -1,6 +1,7 @@
-import { AddToCart, ButtonsCounter, CoffeContainerItem, CoffeCounter, CoffeDescription, CoffeImage, CoffeLabel, CoffePrice } from "./styles";
-import { ShoppingCartSimple, Plus, Minus } from "phosphor-react";
+import { AddToCart, CoffeContainerItem, CoffeDescription, CoffeDescriptionText, CoffeImage, CoffeLabel, CoffePrice, Label, NameCoffe } from "./styles";
+import { ShoppingCartSimple} from "phosphor-react";
 import { Coffe } from "../../context/coffeContext";
+import { ButtonCoffe } from "../ButtonCoffe";
 
 interface CoffeItemProps{
     coffe: Coffe
@@ -8,27 +9,27 @@ interface CoffeItemProps{
 export function CoffeItem({coffe}: CoffeItemProps){
     return(
         <CoffeContainerItem>
+
             <CoffeImage>
-                <img src={coffe.imgPath} alt="" />
+                <img src={coffe.imgPath}/>
                 <CoffeLabel>
                     {coffe.label.map((coffeLabel)=>(
-                    <span key={coffeLabel}>{coffeLabel}</span>
+                    <Label key={coffeLabel}>{coffeLabel}</Label>
                     ))}
                 </CoffeLabel>
             </CoffeImage>
+
             <CoffeDescription>
-                <h3>{coffe.name}</h3>
-                <p>{coffe.description}</p>
+                <NameCoffe>{coffe.name}</NameCoffe>
+                <CoffeDescriptionText>{coffe.description}</CoffeDescriptionText>
             </CoffeDescription>
+            
             <CoffePrice>
                 <p>R$ <span>{coffe.price.toString().replace(".", ",")}</span></p>
-                <CoffeCounter>
-                    <ButtonsCounter><Minus/></ButtonsCounter>
-                    <p>1</p>
-                    <ButtonsCounter><Plus/></ButtonsCounter>
-                </CoffeCounter>
+                <ButtonCoffe/>
                 <AddToCart><ShoppingCartSimple weight="fill" size={22}/></AddToCart>
             </CoffePrice>
+
         </CoffeContainerItem>
     )
 }

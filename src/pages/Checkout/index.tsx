@@ -1,16 +1,19 @@
+import { CardCoffe } from "./CardCoffe";
 import { Order } from "./Order";
-import { CheckoutContainer } from "./style";
+import { OrderPayment } from "./OrderPayment";
+import { CheckoutContainer, TitleCheckoutContainer } from "./style";
 
 export function Checkout(){
     return (
         <CheckoutContainer>
             <div>
-                <h2>Complete seu pedido</h2>
+                <TitleCheckoutContainer>Complete seu pedido</TitleCheckoutContainer>
                 <Order/>
+                <OrderPayment/>
             </div>
             <div>
-                <h2>Cafés selecionados</h2>
-
+                <TitleCheckoutContainer>Cafés selecionados</TitleCheckoutContainer>
+                <CardCoffe/>
             </div>
         </CheckoutContainer>
     )

@@ -1,4 +1,4 @@
-import { CoffeContainer, ContainerItens, HomeCoffes, HomeContainer, HomeImage, HomeTitles, Item } from "./style";
+import { CoffeContainer, ContainerItens, HomeCoffeTitle, HomeCoffes, HomeContainer, HomeImage, HomeTitles, Item, MainSubtitle, MainTitle, TextForInfo } from "./style";
 import coffeImg from '../../assets/CoffeImg.png'
 import { ShoppingCart, Timer, Package, Coffee } from "phosphor-react";
 import { CoffeItem } from "../../components/Coffes";
@@ -11,27 +11,28 @@ export function Home(){
         <>
         <HomeContainer>
             <HomeTitles>
-                <h1>Encontre o café perfeito <br /> para qualquer hora do dia</h1>
-                <p>Com o Coffee Delivery você recebe seu café onde estiver, a qualquer hora</p>
+                <MainTitle>Encontre o café perfeito <br /> para qualquer hora do dia</MainTitle>
+                <MainSubtitle>Com o Coffee Delivery você recebe seu café onde estiver, a qualquer hora</MainSubtitle>
+
                 <ContainerItens>
                     <div>
                         <Item colorbackgroud="yellow-300">
                             <ShoppingCart weight="fill" size={32}/>
-                            <span>Compra simples e segura</span>
+                            <TextForInfo>Compra simples e segura</TextForInfo>
                         </Item>
                         <Item colorbackgroud="yellow-200">
                             <Timer weight="fill" size={32}/>
-                            <span>Entrega rápida e rastreada</span>
+                            <TextForInfo>Entrega rápida e rastreada</TextForInfo>
                         </Item>
                     </div>
                     <div>
                         <Item colorbackgroud="gray-300">
                             <Package weight="fill" size={32}/>
-                            <span>Embalagem mantém o café intacto</span>
+                            <TextForInfo>Embalagem mantém o café intacto</TextForInfo>
                         </Item>
                         <Item colorbackgroud="purple-200">
                             <Coffee weight="fill" size={32}/>
-                            <span>O café chega fresquinho até você</span>
+                            <TextForInfo>O café chega fresquinho até você</TextForInfo>
                         </Item>
                     </div>
                 </ContainerItens>
@@ -41,7 +42,7 @@ export function Home(){
             </HomeImage>
         </HomeContainer>
         <HomeCoffes>
-                <h2>Nossos cafés</h2>
+                <HomeCoffeTitle>Nossos cafés</HomeCoffeTitle>
                 <CoffeContainer>
                     {coffesItens.map((coffe) => (
                         <CoffeItem key={coffe.id} coffe={coffe}/>
