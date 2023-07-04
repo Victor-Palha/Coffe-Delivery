@@ -34,6 +34,7 @@ interface CoffeContextData{
     reduceAmountCoffeCart: (coffes: Coffe[]) => void
     deleteFromCart: (id: string) => void
     setPaymentClientData: React.Dispatch<React.SetStateAction<PaymentClientData>>
+    cleanCart: () => void
 }
 interface PaymentClientData{
     cep: string,
@@ -206,9 +207,12 @@ export function CoffeContextProvider({children}: CoffeContextProviderProps){
         const newCoffeCart = coffeCart.filter(coffe => coffe.id !== id)
         setCoffeCart(newCoffeCart)
     }
+    function cleanCart(){
+        setCoffeCart([])
+    }
 
     return(
-        <CoffeContext.Provider value={{coffesItens, coffeCart, AddCoffeToCart, alterCoffeAmount, reduceAmountCoffeCart, deleteFromCart, setPaymentClientData, paymentClientData}}>
+        <CoffeContext.Provider value={{coffesItens, coffeCart, AddCoffeToCart, alterCoffeAmount, reduceAmountCoffeCart, deleteFromCart, setPaymentClientData, paymentClientData, cleanCart}}>
             {children}
         </CoffeContext.Provider>
     )

@@ -66,5 +66,9 @@ export const CoffePrice = styled.form`
 export const AddToCart = styled(Button)`
     background-color: ${props => props.theme["purple-300"]};
     color: ${props => props.theme["white-300"]};
+    transition: 0.2s;
     padding: 0.5rem;
+    &&:hover{
+        background-color: ${props => props.theme["purple-200"]};
+    }
 `

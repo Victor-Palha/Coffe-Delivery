@@ -6,6 +6,9 @@ import {BrowserRouter} from "react-router-dom";
 import { Router } from "./Router";
 import { CoffeContextProvider } from "./context/coffeContext";
 
+import { ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css'
+
 export function App() {
 
   return (
@@ -14,6 +17,7 @@ export function App() {
         <CoffeContextProvider>
           <Router/>
         </CoffeContextProvider>
+        <ToastContainer/>
       </BrowserRouter>
 
       <GlobalStyle/>

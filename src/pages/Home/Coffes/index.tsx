@@ -3,6 +3,7 @@ import { ShoppingCartSimple} from "phosphor-react";
 import { Coffe, CoffeContext } from "../../../context/coffeContext";
 import { ButtonCoffe } from "../../../components/ButtonCoffe";
 import { useContext } from "react";
+import { toast } from "react-toastify";
 
 interface CoffeItemProps{
     coffe: Coffe
@@ -43,6 +44,8 @@ export function CoffeItem({coffe}: CoffeItemProps){
                 <ButtonCoffe amount={coffe.amount} handleModifyAmountCoffe={handleModifyAmountCoffe}/>
                 <AddToCart type="button" onClick={(e)=>{
                     e.preventDefault()
+                    toast.success(`Adicionado ${coffe.name} ao carrinho`)
+                    // toast(`Adicionado ${coffe.name} ao carrinho`)
                     handleCoffeeToCart(coffe)
                 }}>
                     <ShoppingCartSimple weight="fill" size={22}/>

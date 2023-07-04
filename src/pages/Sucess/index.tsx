@@ -3,11 +3,13 @@ import ImgSucess from '../../assets/Illustration.png';
 import { CurrencyDollar, MapPin, Timer } from "phosphor-react";
 import { useContext } from "react";
 import { CoffeContext } from "../../context/coffeContext";
+import { Navigate } from "react-router-dom";
 
 export function Sucess(){
-    const {paymentClientData} = useContext(CoffeContext)
+    const {paymentClientData, coffeCart} = useContext(CoffeContext)
     return (
         <SucessContainer>
+            {coffeCart.length < 1 && <Navigate to="/checkout" />}
             <SucessDescription>
                 <SucessHeader>
                     <SucessHeaderTitle>Uhu! Pedido confirmado</SucessHeaderTitle>

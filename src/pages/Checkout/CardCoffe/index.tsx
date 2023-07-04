@@ -3,6 +3,7 @@ import { Minus, Plus, Trash } from "phosphor-react";
 import { CoffeContext } from "../../../context/coffeContext";
 import { useContext, useEffect, useState } from "react";
 import { Navigate } from "react-router-dom"
+import { toast } from "react-toastify";
 
 
 export function CardCoffe(){
@@ -43,34 +44,33 @@ export function CardCoffe(){
     function FinishOrder(e: React.MouseEvent<HTMLButtonElement, MouseEvent>){
         e.preventDefault()
         if(coffeCart.length < 1){
-            alert("Adicione itens ao carrinho")
+            toast.error("Adicione itens ao carrinho!")
             return setRedirect(false)
         }
         
         switch(true){
             case !paymentClientData.cep:
-                alert("Preencha todos os campos")
+                toast.error("Preencha todos os campos!")
                 return setRedirect(false) 
             case !paymentClientData.street:
-                alert("Preencha todos os campos")
+                toast.error("Preencha todos os campos!")
                 return setRedirect(false)
             case !paymentClientData.number:
-                alert("Preencha todos os campos")
+                toast.error("Preencha todos os campos!")
                 return setRedirect(false)
             case !paymentClientData.neighborhood:
-                alert("Preencha todos os campos")
+                toast.error("Preencha todos os campos!")
                 return setRedirect(false)
             case !paymentClientData.city:
-                alert("Preencha todos os campos")
+                toast.error("Preencha todos os campos!")
                 return setRedirect(false)
             case !paymentClientData.state:
-                alert("Preencha todos os campos")
+                toast.error("Preencha todos os campos!")
                 return setRedirect(false)
             case !paymentClientData.paymentMethod:
-                alert("Preencha todos os campos")
+                toast.error("Preencha todos os campos!")
                 return false
         }
-        console.log(paymentClientData)
         return setRedirect(true)
     }
 

@@ -36,12 +36,22 @@ export const CoffeName = styled(TextM)`
 `
 
 export const ButtonRemove = styled(Button)`
+    display: flex;
+    align-items: center;
     cursor: pointer;
     margin-left: 0.5rem;
     color: ${props => props.theme["gray-300"]};
+    transition: 0.5s;
     svg{
         color: ${props => props.theme["purple-300"]};
         margin-right: 0.25rem;
+        transition: 0.5s;
+    }
+    &:hover{
+        color: crimson;
+        svg{
+            color: crimson;
+        }
     }
 `
 
@@ -89,6 +99,9 @@ export const ButtonContainer = styled.div`
         cursor: pointer;
         background-color: ${props => props.theme["white-500"]};
         color: ${props => props.theme["purple-200"]};
+        &:hover{
+            color: ${props => props.theme["purple-300"]};
+        }
     }
 `
 export const ButtonCounter = styled(Button)`

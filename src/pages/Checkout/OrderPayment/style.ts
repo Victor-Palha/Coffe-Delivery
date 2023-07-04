@@ -37,4 +37,8 @@ export const PaymentOption = styled(Button)<PaymenteOptionProps>`
         color: ${props => props.theme["purple-200"]};
         margin-right: 0.5rem;
     }
+    transition: 0.2s;
+    &:hover{
+        background-color: ${props => props.theme["gray-100"]};
+    }
 `
