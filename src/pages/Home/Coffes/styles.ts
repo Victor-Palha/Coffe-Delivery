@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
-import { Tag, TextS, TitleS } from "../../styles/fonts";
-import { Button } from "../../styles/Inputs";
+import { Tag, TextS, TitleS } from "../../../styles/fonts";
+import { Button } from "../../../styles/Inputs";
 
 export const CoffeContainerItem = styled.div`
     background-color: ${props => props.theme["white-300"]};

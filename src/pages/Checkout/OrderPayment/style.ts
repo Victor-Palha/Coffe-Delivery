@@ -31,12 +31,10 @@ export const PaymentOption = styled(Button)<PaymenteOptionProps>`
     display: flex;
     align-items: center;
     background-color: ${props => props.selected ? props.theme["purple-100"] : props.theme["white-500"]};
+    border: 1px solid ${props => props.selected ? props.theme["purple-200"] : "none"};
     color: ${props => props.theme["gray-300"]};
     svg{
         color: ${props => props.theme["purple-200"]};
         margin-right: 0.5rem;
-    }
-    &&:focus{
-        background-color: ${props => props.theme["purple-100"]};
     }
 `

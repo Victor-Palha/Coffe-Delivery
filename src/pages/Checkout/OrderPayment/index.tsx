@@ -1,7 +1,22 @@
 import { Bank, CreditCard, CurrencyDollar, Money } from "phosphor-react";
 import { CardHeaderPayment, DescriptionOrderPaymenteHeader, OrderPaymenteContainer, PaymentOption, PaymentOptionsContainer, TitleOrderPaymenteHeader } from "./style";
+import { MouseEvent, useContext, useState } from "react";
+import { CoffeContext } from "../../../context/coffeContext";
 
 export function OrderPayment(){
+    const {paymentClientData, setPaymentClientData} = useContext(CoffeContext)
+    const [paymentMethod, setPaymentMethod] = useState<"Cartão de Crédito" | "Cartão de Débito" | "Dinheiro">()
+
+    function handlePaymentOption(e:MouseEvent, paymentOption: "Cartão de Crédito" | "Cartão de Débito" | "Dinheiro"){
+        e.preventDefault()
+        const payment = paymentOption
+        setPaymentMethod(payment)
+        setPaymentClientData({
+            ...paymentClientData,
+            paymentMethod: payment
+        })
+    }
+
     return (
         <OrderPaymenteContainer>
             <CardHeaderPayment>
@@ -14,9 +29,18 @@ export function OrderPayment(){
                 </div>
             </CardHeaderPayment>
             <PaymentOptionsContainer>
-                <PaymentOption><CreditCard/> CARTÃO DE CRÉDITO</PaymentOption>
-                <PaymentOption><Bank/> CARTÃO DE DÉBITO</PaymentOption>
-                <PaymentOption><Money/> DINHEIRO</PaymentOption>
+                <PaymentOption onClick={
+                    (e)=>handlePaymentOption(e, "Cartão de Crédito")} 
+                    selected={paymentMethod == "Cartão de Crédito" ? true : false
+                }><CreditCard/> CARTÃO DE CRÉDITO</PaymentOption>
+                <PaymentOption onClick={
+                    (e)=>handlePaymentOption(e, "Cartão de Débito")}
+                    selected={paymentMethod == "Cartão de Débito" ? true : false
+                }><Bank/> CARTÃO DE DÉBITO</PaymentOption>
+                <PaymentOption onClick={
+                    (e)=>handlePaymentOption(e, "Dinheiro")}
+                    selected={paymentMethod == "Dinheiro" ? true : false
+                    }><Money/> DINHEIRO</PaymentOption>
             </PaymentOptionsContainer>
         </OrderPaymenteContainer>
     )

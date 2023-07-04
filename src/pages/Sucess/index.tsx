@@ -1,8 +1,11 @@
 import { SucessBody, SucessBodyItens, SucessBodyText, SucessBodyTextContainer, SucessContainer, SucessDescription, SucessHeader, SucessHeaderSubtitle, SucessHeaderTitle, SucessImage } from "./style";
 import ImgSucess from '../../assets/Illustration.png';
 import { CurrencyDollar, MapPin, Timer } from "phosphor-react";
+import { useContext } from "react";
+import { CoffeContext } from "../../context/coffeContext";
 
 export function Sucess(){
+    const {paymentClientData} = useContext(CoffeContext)
     return (
         <SucessContainer>
             <SucessDescription>
@@ -15,10 +18,10 @@ export function Sucess(){
                         <MapPin size={30} weight="fill" />
                         <SucessBodyTextContainer>
                             <SucessBodyText>
-                                Entrega em <span>Rua João Daniel Martinelli, 102</span> 
+                                Entrega em <span>{paymentClientData.street}, {paymentClientData.number}</span> 
                             </SucessBodyText>
                             <SucessBodyText>
-                                Farrapos - Porto Alegre, RS
+                                {paymentClientData.neighborhood} - {paymentClientData.city}, {paymentClientData.state}
                             </SucessBodyText>
                         </SucessBodyTextContainer>
                     </SucessBodyItens>
@@ -40,7 +43,7 @@ export function Sucess(){
                                 Pagamento na entrega 
                             </SucessBodyText>
                             <SucessBodyText>
-                                <span>Cartão de Crédito</span>
+                                <span>{paymentClientData.paymentMethod}</span>
                             </SucessBodyText>
                         </SucessBodyTextContainer>
                     </SucessBodyItens>

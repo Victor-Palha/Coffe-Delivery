@@ -1,7 +1,7 @@
 import { CoffeContainer, ContainerItens, HomeCoffeTitle, HomeCoffes, HomeContainer, HomeImage, HomeTitles, Item, MainSubtitle, MainTitle, TextForInfo } from "./style";
 import coffeImg from '../../assets/CoffeImg.png'
 import { ShoppingCart, Timer, Package, Coffee } from "phosphor-react";
-import { CoffeItem } from "../../components/Coffes";
+import { CoffeItem } from "./Coffes";
 import { useContext } from "react";
 import { CoffeContext} from "../../context/coffeContext";
 

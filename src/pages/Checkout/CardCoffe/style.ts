@@ -4,6 +4,7 @@ import { TextL, TextM, TextS } from "../../../styles/fonts";
 
 export const CardCoffeContainer = styled(Card)`
     border-radius: 6px 44px 6px 44px;
+    min-width: 27.1875rem;
 `
 
 export const CoffeOrderItem = styled.div`
@@ -74,4 +75,26 @@ export const ButtonFinish = styled(Button)`
     text-transform: uppercase;
     font-weight: 800;
     margin-top: 1.25rem;
+`
+
+export const ButtonContainer = styled.div`
+    display: flex;
+    align-items: center;
+    border-radius: 6px;
+    background-color: ${props => props.theme["white-500"]};
+    button{
+        border: 0;
+        border-radius: 6px;
+        padding: 0.75rem 0.5rem;
+        cursor: pointer;
+        background-color: ${props => props.theme["white-500"]};
+        color: ${props => props.theme["purple-200"]};
+    }
+`
+export const ButtonCounter = styled(Button)`
+
+`
+
+export const TextCounterCoffer = styled(TextM)`
+    color: ${props => props.theme["gray-500"]};
 `

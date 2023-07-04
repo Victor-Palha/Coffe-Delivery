@@ -13,7 +13,7 @@ export function Checkout(){
             </div>
             <div>
                 <TitleCheckoutContainer>Cafés selecionados</TitleCheckoutContainer>
-                <CardCoffe/>
+                    <CardCoffe/>
             </div>
         </CheckoutContainer>
     )

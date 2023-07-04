@@ -1,12 +1,26 @@
 import { AddToCart, CoffeContainerItem, CoffeDescription, CoffeDescriptionText, CoffeImage, CoffeLabel, CoffePrice, Label, NameCoffe } from "./styles";
 import { ShoppingCartSimple} from "phosphor-react";
-import { Coffe } from "../../context/coffeContext";
-import { ButtonCoffe } from "../ButtonCoffe";
+import { Coffe, CoffeContext } from "../../../context/coffeContext";
+import { ButtonCoffe } from "../../../components/ButtonCoffe";
+import { useContext } from "react";
 
 interface CoffeItemProps{
     coffe: Coffe
 }
 export function CoffeItem({coffe}: CoffeItemProps){
+    const {AddCoffeToCart, alterCoffeAmount} = useContext(CoffeContext)
+    
+    function handleModifyAmountCoffe(amount: number){
+        if(amount >= 1){
+            alterCoffeAmount(coffe.id, amount)
+        }else{
+            return
+        }
+    }
+
+    function handleCoffeeToCart(coffe: Coffe){
+        AddCoffeToCart(coffe)
+    }
     return(
         <CoffeContainerItem>
 
@@ -26,8 +40,13 @@ export function CoffeItem({coffe}: CoffeItemProps){
             
             <CoffePrice>
                 <p>R$ <span>{coffe.price.toString().replace(".", ",")}</span></p>
-                <ButtonCoffe/>
-                <AddToCart><ShoppingCartSimple weight="fill" size={22}/></AddToCart>
+                <ButtonCoffe amount={coffe.amount} handleModifyAmountCoffe={handleModifyAmountCoffe}/>
+                <AddToCart type="button" onClick={(e)=>{
+                    e.preventDefault()
+                    handleCoffeeToCart(coffe)
+                }}>
+                    <ShoppingCartSimple weight="fill" size={22}/>
+                </AddToCart>
             </CoffePrice>
 
         </CoffeContainerItem>
