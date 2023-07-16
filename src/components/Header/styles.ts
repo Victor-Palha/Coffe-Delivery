@@ -1,5 +1,4 @@
 import {styled} from "styled-components"
-import { TextS } from "../../styles/fonts"
 
 export const HeaderContainer = styled.header`
     padding: 2.06rem 10rem;
