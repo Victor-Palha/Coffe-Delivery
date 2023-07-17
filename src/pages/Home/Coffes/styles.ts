@@ -9,6 +9,9 @@ export const CoffeContainerItem = styled.div`
     padding-bottom: 0.5rem; 
     margin-right: 2rem;
     margin-bottom: 2.5rem;
+    @media (max-width: 500px){
+        margin-right: 1rem;
+    }
 `
 
 export const CoffeImage = styled.div`
@@ -19,10 +22,19 @@ export const CoffeImage = styled.div`
         margin-top: -1.25rem;
     }
     margin-bottom: 1rem;
+
+    @media (max-width: 500px){
+        img{
+            width: 5rem;
+        }
+    }
 `
 
 export const CoffeLabel = styled.div`
     margin-top: 0.75rem;
+    @media (max-width: 500px){
+        margin-top: 0.25rem;
+    }
 `
 export const Label = styled(Tag)`
     margin-right: 0.25rem;
@@ -31,6 +43,11 @@ export const Label = styled(Tag)`
     padding: 0.25rem 0.5rem;
     border-radius: 8px;
     background-color: ${props => props.theme["yellow-100"]};
+
+    @media (max-width: 500px){
+        font-size: 0.5rem;
+        padding: 0.25rem 0.25rem;
+    }
 `
 
 export const CoffeDescription = styled.div`
@@ -39,6 +56,9 @@ export const CoffeDescription = styled.div`
 export const NameCoffe = styled(TitleS)`
     color: ${props => props.theme["gray-400"]};
     margin-bottom: 0.5rem ;
+    @media (max-width: 500px){
+        font-size: 1rem;
+    }
 `
 export const CoffeDescriptionText = styled(TextS)`
     color: ${props => props.theme["gray-200"]};

@@ -5,25 +5,34 @@ import { TextL, TextM, TextS } from "../../../styles/fonts";
 export const CardCoffeContainer = styled(Card)`
     border-radius: 6px 44px 6px 44px;
     min-width: 27.1875rem;
+
+    @media (max-width: 1248px){
+        width: 100%;
+    }
+    @media (max-width: 500px){
+        border-radius: 0px;
+        width: 100%;
+        min-width: 90vw;
+    }
 `
 
 export const CoffeOrderItem = styled.div`
-display: flex;
-justify-content: space-between;
-color: ${props => props.theme["gray-300"]};
-img{
-    width: 4rem;
-    height: 4rem;
-    margin-right: 1.25rem;
-}
+    display: flex;
+    justify-content: space-between;
+    color: ${props => props.theme["gray-300"]};
+    img{
+        width: 4rem;
+        height: 4rem;
+        margin-right: 1.25rem;
+    }
 `
 export const CoffeInfo = styled.div`
-display: flex;
-align-items: center;
-flex-direction: column;
-div{
     display: flex;
-}
+    align-items: center;
+    flex-direction: column;
+    div{
+        display: flex;
+    }
 `
 
 export const CoffePrice = styled(TextM)`

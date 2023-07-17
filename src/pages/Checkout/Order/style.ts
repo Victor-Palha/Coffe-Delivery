@@ -6,12 +6,23 @@ export const OrderContainer = styled(Card)`
     margin-top: 1rem;
     margin-bottom: 1rem;
     border-radius: 6px;
+    @media (max-width: 764px){
+        width: 90vw;
+    }
+    @media (max-width: 500px){
+        border-radius: 0px;
+        width: 100%;
+    }
 `
 
 export const CardHeaderOrder = styled(CardHeader)`
     svg{
         color: ${props => props.theme["yellow-300"]};
         margin-right: 0.5rem;
+
+    @media (max-width: 500px){
+        margin-right: 0rem;
+    }
     }
 `
 export const TitleOrderHeader = styled(TextM)`
@@ -34,10 +45,23 @@ export const BaseInput = styled.input<BaseButtonProps>`
     border: 1.5px solid ${props => props.theme["white-500"]};
     border-radius: 8px;
     font-size: 0.875rem;
+
+    @media (max-width: 764px){
+        margin: 1rem 10px;
+        width: 100%;
+        padding: .8rem;
+        div{
+            display: flex;
+            flex-wrap: wrap;
+        }
+    }
 `
 
 export const OrderInputs = styled.div`
     div{
         display: flex;
+    }
+    @media (max-width: 764px){
+        width: 100%;
     }
 `

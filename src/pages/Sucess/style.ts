@@ -6,6 +6,16 @@ export const SucessContainer = styled.div`
     display: flex;
     margin: 5rem 10rem;
     justify-content: space-between;
+
+    @media (max-width: 1300px){
+        margin: 5rem 5rem;
+    }
+
+    @media (max-width: 922px){
+        margin: 5rem 2rem;
+        flex-direction: column;
+        justify-content: center;
+    }
 `
 export const SucessHeaderTitle = styled(TitleL)`
     color: ${props => props.theme["yellow-300"]};
@@ -53,4 +63,12 @@ export const SucessBodyText = styled(TextS)`
     }
 `
 
-export const SucessImage = styled.div``
+export const SucessImage = styled.div`
+    @media (max-width: 922px){
+        img{
+            margin: 1rem;
+            flex-direction: column;
+            width: 20rem;
+        }
+    }
+`

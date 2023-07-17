@@ -5,6 +5,18 @@ export const HomeContainer = styled.section`
     display: flex;
     padding: 5.75rem 10rem;
     justify-content: space-between;
+    flex-wrap: wrap;
+
+    @media (max-width: 1440px){
+        justify-content: center;
+    }
+
+    @media (max-width: 922px){
+        padding: 5.75rem 5rem;
+    }
+    @media (max-width: 500px){
+        padding: 3rem 2rem;
+    }
 `
 export const HomeTitles = styled.div`
     margin-right: 3.5rem;
@@ -52,11 +64,22 @@ export const TextForInfo = styled(TextM)`
 export const HomeImage = styled.div`
     img{
         filter: drop-shadow(-50px 50px 100px ${props => props.theme["yellow-200"]});
+
+    @media (max-width: 1440px){
+        margin-top: 5rem;
+        filter: drop-shadow(-10px 10px 100px ${props => props.theme["yellow-200"]});
+    }
+    @media (max-width: 922px){
+        width: 20rem;
+    }
     }
 `
 
 export const HomeCoffes = styled.main`
     padding: 0px 10rem;
+    @media (max-width: 1440px){
+        padding: 0px 5rem;
+    }
 `
 
 export const HomeCoffeTitle = styled(TitleL)`

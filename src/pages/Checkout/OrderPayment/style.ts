@@ -21,6 +21,9 @@ export const DescriptionOrderPaymenteHeader = styled(TextS)`
 export const PaymentOptionsContainer = styled.div`
     display: flex;
     justify-content: space-between;
+    @media (max-width: 640px){
+        flex-direction: column;
+    }
 `
 
 interface PaymenteOptionProps {
@@ -40,5 +43,9 @@ export const PaymentOption = styled(Button)<PaymenteOptionProps>`
     transition: 0.2s;
     &:hover{
         background-color: ${props => props.theme["gray-100"]};
+    }
+
+    @media (max-width: 640px){
+        margin: .5rem 0;
     }
 `
